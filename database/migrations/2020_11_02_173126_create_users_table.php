@@ -15,14 +15,14 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('photo')->nullable();
+            $table->enum('role', ['admin', 'farmer']);
+            $table->string('photo')->default('https://via.placeholder.com/150');
             $table->string('firstname');
-            $table->string('lastname');
+            $table->string('lastname')->nullable();
             $table->string('username');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('old_password');
-            $table->string('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

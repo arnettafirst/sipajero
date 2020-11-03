@@ -14,7 +14,6 @@
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Auth::routes([
-    'register' => false,
     'reset' => false,
     'verify' => false,
 ]);
@@ -23,10 +22,12 @@ Route::get('/login', function () {
     return redirect('/');
 })->name('login');
 
-Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['auth', 'check.role:admin'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
+    Route::resource('farmer', 'FarmerController', ['as' => 'admin'])->except(['create', 'edit']);
 });
 
-Route::group(['middleware' => 'auth', 'namespace' => 'Farmer', 'prefix' => 'farmer'], function () {
+Route::group(['middleware' => ['auth', 'check.role:farmer'], 'namespace' => 'Farmer', 'prefix' => 'farmer'], function () {
     Route::get('/', 'DashboardController@index')->name('farmer.dashboard.index');
+    Route::resource('farmer', 'FarmerController', ['as' => 'farmer'])->except(['create', 'store', 'edit', 'update', 'destroy']);
 });

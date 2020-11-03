@@ -21,5 +21,5 @@
             </div>
         </div>
     </section>
-    @include('login')
+    @include('layouts.auth')
 @endsection

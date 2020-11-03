@@ -36,9 +36,23 @@
             @endguest
             @auth
                 <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                    <img alt="image" src="{{ Auth::user()->photo }}" class="rounded-circle mr-1">
                     <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->username }}</div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
+                    <a href="#" class="dropdown-item has-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                    @if(Auth::user()->role == 'admin')
+                        <a href="{{ route('admin.dashboard.index') }}" class="dropdown-item has-icon">
+                            <i class="fas fa-columns"></i> Dashboard
+                        </a>
+                    @else
+                        <a href="{{ route('farmer.dashboard.index') }}" class="dropdown-item has-icon">
+                            <i class="fas fa-columns"></i> Dashboard
+                        </a>
+                    @endif
+                    <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>Logout

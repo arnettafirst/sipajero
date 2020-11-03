@@ -13,28 +13,24 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'id'                => 1,
-            'photo'             => 'https://via.placeholder.com/150',
+            'role'              => 1,
             'firstname'         => 'Admin',
             'lastname'          => 'Sipajero',
             'username'          => 'admins',
             'email'             => 'admin@sipajero.com',
             'password'          => 'a',
             'old_password'      => 'a',
-            'is_admin'          => true,
             'remember_token'    => null,
         ]);
 
         User::create([
-            'id'                => 2,
-            'photo'             => 'https://via.placeholder.com/150',
+            'role'              => 2,
             'firstname'         => 'Farmer',
             'lastname'          => 'Sipajero',
             'username'          => 'farmers',
             'email'             => 'farmer@sipajero.com',
             'password'          => 'a',
             'old_password'      => 'a',
-            'is_admin'          => false,
             'remember_token'    => null,
         ]);
     }
