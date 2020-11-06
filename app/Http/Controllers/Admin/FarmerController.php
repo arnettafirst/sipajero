@@ -103,7 +103,7 @@ class FarmerController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'photo'     => 'required|image|mimes:png,jpeg,jpg',
+            'photo'     => 'nullable|image|mimes:png,jpeg,jpg',
             'firstname' => 'required|string',
             'lastname'  => 'nullable|string',
             'username'  => 'required|string',
@@ -119,7 +119,7 @@ class FarmerController extends Controller
             $filename = time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('local')->put('public/photo/' . $filename, file_get_contents($file));
 
-            User::whereId($id)->update([
+            $farmers->whereId($id)->update([
                 'photo'         => $filename,
                 'role'          => 2,
                 'firstname'     => $request->firstname,

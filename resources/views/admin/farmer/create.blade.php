@@ -15,7 +15,7 @@
                         <label>Foto Profil</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input id="photo" type="file" class="custom-file-input{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="photo" value="{{ old('photo') }}" required>
+                                <input id="photo" type="file" class="custom-file-input{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ old('photo') }}" required>
                                 <label class="custom-file-label">Pilih file</label>
                             </div>
                         </div>

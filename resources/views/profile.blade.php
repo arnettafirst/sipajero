@@ -15,19 +15,19 @@
                         </div>
                         <div class="card-body">
                             <div class="profile-widget-header text-center">
-                                <img alt="image" src="{{ $farmer->photo }}" class="rounded-circle">
-                                <div class="profile-widget-name text-center text-primary font-weight-600 mt-3">{{ $farmer->username }}
+                                <img alt="image" src="{{ Auth::user()->photo }}" class="rounded-circle">
+                                <div class="profile-widget-name text-center text-primary font-weight-600 mt-3">{{ Auth::user()->username }}
                                     <div class="text-muted d-inline font-weight-normal">
                                         <div class="slash"></div>
-                                        {{ $farmer->role }}
+                                        {{ Auth::user()->role }}
                                     </div>
                                 </div>
                             </div>
                             <div class="profile-widget-description">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Nama Depan : {{ $farmer->firstname }}</li>
-                                    <li class="list-group-item">Nama Belakang : {{ $farmer->lastname }}</li>
-                                    <li class="list-group-item">Email : {{ $farmer->email }}</li>
+                                    <li class="list-group-item">Nama Depan : {{ Auth::user()->firstname }}</li>
+                                    <li class="list-group-item">Nama Belakang : {{ Auth::user()->lastname }}</li>
+                                    <li class="list-group-item">Email : {{ Auth::user()->email }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -62,14 +62,14 @@
                             </div>
                         @endif
                         <div class="card-body">
-                            <form action="{{ route('admin.farmer.update', $farmer->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
                                 <div class="form-group">
                                     <label>Foto Profil</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input id="photo" type="file" class="custom-file-input{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ $farmer->photo }}">
+                                            <input id="photo" type="file" class="custom-file-input{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ Auth::user()->photo }}">
                                             <label class="custom-file-label">Pilih file</label>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                     <div class="form-group col-12 col-md-6">
                                         <label>Nama Depan</label>
                                         <div class="input-group">
-                                            <input id="firstname" type="text" class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" value="{{ $farmer->firstname }}" placeholder="John" required>
+                                            <input id="firstname" type="text" class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" value="{{ Auth::user()->firstname }}" placeholder="John" required>
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('firstname') }}
                                             </div>
@@ -87,7 +87,7 @@
                                     <div class="form-group col-12 col-md-6">
                                         <label>Nama Belakang</label>
                                         <div class="input-group">
-                                            <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ $farmer->lastname }}" placeholder="Doe">
+                                            <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ Auth::user()->lastname }}" placeholder="Doe">
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('lastname') }}
                                             </div>
@@ -97,7 +97,7 @@
                                 <div class="form-group">
                                     <label>Username</label>
                                     <div class="input-group">
-                                        <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ $farmer->username }}" placeholder="johndoe" required>
+                                        <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ Auth::user()->username }}" placeholder="johndoe" required>
                                         <div class="invalid-feedback">
                                             {{ $errors->first('username') }}
                                         </div>
@@ -106,7 +106,7 @@
                                 <div class="form-group">
                                     <label>Email</label>
                                     <div class="input-group">
-                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $farmer->email }}" placeholder="email@address.com" required>
+                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ Auth::user()->email }}" placeholder="email@address.com" required>
                                         <div class="invalid-feedback">
                                             {{ $errors->first('email') }}
                                         </div>
@@ -115,7 +115,7 @@
                                 <div class="form-group">
                                     <label>Password</label>
                                     <div class="input-group">
-                                        <input id="password" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid': '' }}" name="password" value="{{ $farmer->old_password }}" placeholder="Minimal 8 karakter" required>
+                                        <input id="password" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid': '' }}" name="password" value="{{ Auth::user()->old_password }}" placeholder="Minimal 8 karakter" required>
                                         <div class="invalid-feedback">
                                             {{ $errors->first('password') }}
                                         </div>
