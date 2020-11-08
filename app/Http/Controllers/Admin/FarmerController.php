@@ -52,20 +52,20 @@ class FarmerController extends Controller
             $file = $request->file('photo');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('local')->put('public/photo/' . $filename, file_get_contents($file));
-
-            User::create([
-                'photo'         => $filename,
-                'role'          => 2,
-                'firstname'     => $request->firstname,
-                'lastname'      => $request->lastname,
-                'username'      => $request->username,
-                'email'         => $request->email,
-                'password'      => $request->password,
-                'old_password'  => $request->password
-            ]);
-
-            return redirect()->back()->with('success', 'Data berhasil ditambahkan');
         }
+
+        User::create([
+            'photo'         => $filename,
+            'role'          => 2,
+            'firstname'     => $request->firstname,
+            'lastname'      => $request->lastname,
+            'username'      => $request->username,
+            'email'         => $request->email,
+            'password'      => $request->password,
+            'old_password'  => $request->password
+        ]);
+
+        return redirect()->back()->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -118,20 +118,20 @@ class FarmerController extends Controller
             $file = $request->file('photo');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('local')->put('public/photo/' . $filename, file_get_contents($file));
-
-            $farmers->whereId($id)->update([
-                'photo'         => $filename,
-                'role'          => 2,
-                'firstname'     => $request->firstname,
-                'lastname'      => $request->lastname,
-                'username'      => $request->username,
-                'email'         => $request->email,
-                'password'      => bcrypt($request->password),
-                'old_password'  => $request->password
-            ]);
-
-            return redirect()->back()->with('success', 'Data berhasil diubah');
         }
+
+        $farmers->whereId($id)->update([
+            'photo'         => $filename,
+            'role'          => 2,
+            'firstname'     => $request->firstname,
+            'lastname'      => $request->lastname,
+            'username'      => $request->username,
+            'email'         => $request->email,
+            'password'      => bcrypt($request->password),
+            'old_password'  => $request->password
+        ]);
+
+        return redirect()->back()->with('success', 'Data berhasil diubah');
     }
 
     /**
