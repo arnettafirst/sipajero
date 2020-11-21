@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('/information', 'WelcomeController@information')->name('information');
+Route::get('/information/{slug}', 'WelcomeController@informationDetail')->name('information.detail');
+Route::get('/discussion', 'WelcomeController@discussion')->name('discussion');
 Route::get('/profile', 'ProfileController@show')->name('profile.show');
 Route::patch('/profile', 'ProfileController@update')->name('profile.update');
 
@@ -27,6 +30,7 @@ Route::get('/login', function () {
 Route::group(['as' => 'admin.', 'middleware' => ['auth', 'check.role:admin'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
     Route::resource('farmer', 'FarmerController')->except(['create', 'edit']);
+    Route::resource('information', 'InformationController');
 });
 
 Route::group(['as' => 'farmer.', 'middleware' => ['auth', 'check.role:farmer'], 'namespace' => 'Farmer', 'prefix' => 'farmer'], function () {

@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Petani</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,6 +17,9 @@
                             <div class="custom-file">
                                 <input id="photo" type="file" class="custom-file-input{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ old('photo') }}" required>
                                 <label class="custom-file-label">Pilih file</label>
+                            </div>
+                            <div class="invalid-feedback">
+                                {{ $errors->first('photo') }}
                             </div>
                         </div>
                     </div>

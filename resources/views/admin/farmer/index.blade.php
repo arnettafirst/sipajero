@@ -84,6 +84,11 @@
                                 </table>
                             </div>
                         </div>
+                        <div class="card-footer text-right">
+                            <nav class="d-inline-block">
+                                {{ $farmers->links() }}
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>

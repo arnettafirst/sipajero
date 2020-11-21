@@ -72,6 +72,9 @@
                                             <input id="photo" type="file" class="custom-file-input{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ $farmer->photo }}">
                                             <label class="custom-file-label">Pilih file</label>
                                         </div>
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('photo') }}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">

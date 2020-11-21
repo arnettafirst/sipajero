@@ -1,15 +1,12 @@
 <nav class="navbar navbar-expand-lg main-navbar">
-    <a href="" class="navbar-brand sidebar-gone-hide">{{ env('APP_NAME') }}</a>
+    <a href="{{ route('welcome') }}" class="navbar-brand sidebar-gone-hide">{{ env('APP_NAME') }}</a>
     <div class="nav-collapse">
         <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
             <i class="fas fa-bars" style="font-size: 24px;"></i>
         </a>
         <ul class="navbar-nav">
-            <li class="nav-item active"><a href="#" class="nav-link">Beranda</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Peramalan</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Informasi</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Diskusi</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Laporan</a></li>
+            <li class="nav-item{{ Request::route()->getName() == 'information' ? ' active' : '' }}"><a href="{{ route('information') }}" class="nav-link">Informasi</a></li>
+            <li class="nav-item{{ Request::route()->getName() == 'discussion' ? ' active' : '' }}"><a href="{{ route('discussion') }}" class="nav-link">Diskusi</a></li>
         </ul>
     </div>
     <form class="form-inline ml-auto">

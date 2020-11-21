@@ -16,7 +16,7 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        $farmers = User::where('role', 'farmer')->orderBy('id', 'ASC')->paginate(10);
+        $farmers = User::where('role', 'farmer')->orderBy('firstname', 'ASC')->paginate(10);
 
         return view('admin.farmer.index', compact('farmers'));
     }
@@ -76,8 +76,7 @@ class FarmerController extends Controller
      */
     public function show($id)
     {
-        $farmers = User::where('role', 'farmer')->get();
-        $farmer = $farmers->find($id);
+        $farmer = User::where('role', 'farmer')->findOrFail($id);
 
         return view('admin.farmer.show', compact('farmer'));
     }
@@ -112,15 +111,14 @@ class FarmerController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
-            $farmers = User::where('role', 'farmer')->get();
-            $farmer = $farmers->find($id);
+            $farmer = User::where('role', 'farmer')->findOrFail($id);
             Storage::disk('local')->delete('public/photo/' . $farmer->photo);
             $file = $request->file('photo');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             Storage::disk('local')->put('public/photo/' . $filename, file_get_contents($file));
         }
 
-        $farmers->whereId($id)->update([
+        $farmer->update([
             'photo'         => $filename,
             'role'          => 2,
             'firstname'     => $request->firstname,
@@ -142,8 +140,7 @@ class FarmerController extends Controller
      */
     public function destroy($id)
     {
-        $farmers = User::where('role', 'farmer')->get();
-        $farmer = $farmers->find($id);
+        $farmer = User::where('role', 'farmer')->findOrFail($id);
         Storage::disk('local')->delete('public/photo/' . $farmer->photo);
         $farmer->delete();
 
