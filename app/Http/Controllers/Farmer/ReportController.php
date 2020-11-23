@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Farmer;
 
-use App\User;
+use App\Report;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
-class FarmerController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        $farmers = User::where('role', 'farmer')->orderBy('firstname', 'ASC')->paginate(10);
+        $reports = Auth::user()->reports()->paginate(10);
 
-        return view('farmer.farmer.index', compact('farmers'));
+        return view('farmer.report.index', compact('reports'));
     }
 
     /**
@@ -38,7 +39,19 @@ class FarmerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'     => 'required|string',
+            'contents'  => 'required'
+        ]);
+
+        Report::create([
+            'title'     => $request->title,
+            'slug'      => strtolower($request->title),
+            'contents'  => $request->contents,
+            'user_id'   => Auth::id()
+        ]);
+
+        return redirect()->back()->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -47,9 +60,11 @@ class FarmerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $report = Report::where('slug', $slug)->where('user_id', Auth::id())->firstOrFail();
+
+        return view('farmer.report.show', compact('report'));
     }
 
     /**

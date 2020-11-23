@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Farmer;
+namespace App\Http\Controllers\Admin;
 
-use App\User;
+use App\Report;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class FarmerController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        $farmers = User::where('role', 'farmer')->orderBy('firstname', 'ASC')->paginate(10);
+        $reports = Report::orderBy('created_at', 'ASC')->paginate(10);
 
-        return view('farmer.farmer.index', compact('farmers'));
+        return view('admin.report.index', compact('reports'));
     }
 
     /**
@@ -47,9 +47,11 @@ class FarmerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $report = Report::where('slug', $slug)->firstOrFail();
+
+        return view('admin.report.show', compact('report'));
     }
 
     /**

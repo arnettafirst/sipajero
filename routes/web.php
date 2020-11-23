@@ -27,13 +27,19 @@ Route::get('/login', function () {
     return redirect('/');
 })->name('login');
 
+Route::get('/register', function () {
+    return redirect('/');
+})->name('register');
+
 Route::group(['as' => 'admin.', 'middleware' => ['auth', 'check.role:admin'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
     Route::resource('farmer', 'FarmerController')->except(['create', 'edit']);
     Route::resource('information', 'InformationController');
+    Route::resource('report', 'ReportController')->except(['create', 'store', 'edit', 'update', 'destroy']);
 });
 
 Route::group(['as' => 'farmer.', 'middleware' => ['auth', 'check.role:farmer'], 'namespace' => 'Farmer', 'prefix' => 'farmer'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
     Route::resource('farmer', 'FarmerController')->except(['create', 'store', 'edit', 'update', 'destroy']);
+    Route::resource('report', 'ReportController')->except(['create', 'edit', 'update', 'destroy']);
 });
