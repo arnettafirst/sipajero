@@ -16,8 +16,8 @@
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><span class="font-weight-600 text-primary">Tanggal :</span> {{ $report->created_at }}</li>
-                                <li class="list-group-item"><span class="font-weight-600 text-primary">Judul :</span> {{ $report->title}}</li>
-                                <li class="list-group-item"><span class="font-weight-600 text-primary">Nama Pelapor :</span> {{ $report->Auth::user()->firstname }}</li>
+                                <li class="list-group-item"><span class="font-weight-600 text-primary">Judul :</span> {{ $report->title }}</li>
+                                <li class="list-group-item"><span class="font-weight-600 text-primary">Nama Pelapor :</span> {{ $report->user()->first()->firstname }}</li>
                                 <li class="list-group-item"><span class="font-weight-600 text-primary">Laporan :</span> <br>{!! $report->contents !!}</li>
                             </ul>
                         </div>

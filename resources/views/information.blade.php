@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="row mt-5">
-                @foreach($informations as $information)
+                @forelse($informations as $information)
                     <div class="col-12 col-lg-4">
                     <article class="article article-style-c">
                         <div class="article-header">
@@ -59,7 +59,11 @@
                         </div>
                     </article>
                 </div>
-                @endforeach
+                @empty
+                    <div class="col-12 text-center">
+                        <p>Admin belum memberikan informasi apapun</p>
+                    </div>
+                @endforelse
             </div>
             <div class="row mt-5 justify-content-center">
                 <nav class="d-inline-block">

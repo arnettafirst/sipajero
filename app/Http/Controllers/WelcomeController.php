@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Discussion;
 use App\Information;
 
 class WelcomeController extends Controller
@@ -9,8 +10,9 @@ class WelcomeController extends Controller
     public function index()
     {
         $informations = Information::orderBy('created_at', 'ASC')->get()->take(3);
+        $discussions = Discussion::orderBy('created_at', 'ASC')->get()->take(3);
 
-        return view('welcome', compact('informations'));
+        return view('welcome', compact('informations', 'discussions'));
     }
 
     public function information()
@@ -29,6 +31,8 @@ class WelcomeController extends Controller
 
     public function discussion()
     {
-        return view('discussion');
+        $discussions = Discussion::orderBy('updated_at', 'ASC')->paginate(10);
+
+        return view('discussion', compact('discussions'));
     }
 }

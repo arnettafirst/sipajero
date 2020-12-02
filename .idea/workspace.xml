@@ -105,6 +105,15 @@
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/matthewbdaly/laravel-azure-storage" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/microsoft/azure-storage-common" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/microsoft/azure-storage-blob" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-azure-blob-storage" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jdKrRgp7g8vNpe2QChzscv6fjy" />
@@ -116,21 +125,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/farmer/report" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/farmer" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\sipajero\resources\views\farmer\report" />
-      <recent name="D:\Projects\sipajero\resources\views\farmer" />
-      <recent name="D:\Projects\sipajero\resources\js" />
-      <recent name="D:\Projects\sipajero\resources\views" />
-      <recent name="D:\Projects\sipajero\public\assets\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\sipajero\resources\views\layouts" />
       <recent name="D:\Projects\sipajero\resources\views\auth" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\sipajero\resources\views\farmer" />
+      <recent name="D:\Projects\sipajero\resources\views\farmer\report" />
+      <recent name="D:\Projects\sipajero\resources\js" />
+      <recent name="D:\Projects\sipajero\resources\views" />
+      <recent name="D:\Projects\sipajero\public\assets\img" />
     </key>
   </component>
   <component name="RunManager">
@@ -160,7 +169,11 @@
       <workItem from="1605884344527" duration="1386000" />
       <workItem from="1605895628737" duration="35671000" />
       <workItem from="1606017297480" duration="22743000" />
-      <workItem from="1606117619238" duration="7197000" />
+      <workItem from="1606117619238" duration="7485000" />
+      <workItem from="1606446389174" duration="39000" />
+      <workItem from="1606446603249" duration="80000" />
+      <workItem from="1606830669581" duration="585000" />
+      <workItem from="1606844658434" duration="19166000" />
     </task>
     <servers />
   </component>
@@ -176,10 +189,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="510" y="37" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1604341614393" />
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606120441254">
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606897966933">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1606120441254" />
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1606897966933" />
     <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1604905770307">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -192,9 +205,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1605962393427" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1605982973206">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1606898095733">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1605982973206" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606898095733" />
   </component>
 </project>

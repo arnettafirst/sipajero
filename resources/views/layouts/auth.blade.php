@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ul class="nav nav-pills" id="authTab" role="tablist">
-                    <li class="nav-item">
+                    <li class="nav-item mr-1">
                         <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
                     </li>
                     <li class="nav-item">

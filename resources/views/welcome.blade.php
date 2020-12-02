@@ -36,7 +36,7 @@
                 <h1>INFORMASI</h1>
             </div>
             <div class="row mt-5">
-                @foreach($informations as $information)
+                @forelse($informations as $information)
                     <div class="col-12 col-lg-4">
                         <article class="article article-style-c">
                             <div class="article-header">
@@ -69,7 +69,11 @@
                             </div>
                         </article>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12 text-center">
+                        <p>Admin belum memberikan informasi apapun</p>
+                    </div>
+                @endforelse
             </div>
             <div class="row justify-content-center mt-5">
                 <h1>DISKUSI</h1>
@@ -79,7 +83,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="list-group list-group-flush mt-1">
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                @forelse($discussions as $discussion)
+                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1">List group item heading</h5>
                                         <small>3 days ago</small>
@@ -87,22 +92,12 @@
                                     <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                                     <small>Author</small>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small>3 days ago</small>
+                                @empty
+                                    <div class="text-center">
+                                        <p>Tidak terdapat diskusi apapun saat ini</p>
+                                        <a class="btn btn-primary w-25" href="#">Mulai Diskusi Sekarang</a>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    <small>Author</small>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small>3 days ago</small>
-                                    </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    <small>Author</small>
-                                </a>
+                                @endforelse
                             </div>
                         </div>
                         <div class="card-footer pt-0 text-right">

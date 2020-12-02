@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Report::class, 'user_id', 'id');
     }
+
+    public function discussions()
+    {
+        return $this->hasMany(Discussion::class, 'user_id', 'id');
+    }
 }
