@@ -16,7 +16,7 @@
             <li class="{{ Request::route()->getName() == 'farmer.dashboard.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('farmer.dashboard.index') }}"><i class="fa fa-columns"></i> <span>Dashboard</span></a></li>
             <li class="{{ Request::route()->getName() == 'farmer.farmer.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('farmer.farmer.index') }}"><i class="fas fa-user"></i> <span>Petani</span></a></li>
             <li class="{{ Request::route()->getName() == 'farmer.report.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('farmer.report.index') }}"><i class="fas fa-question-circle"></i> <span>Laporan</span></a></li>
-            <li class="{{ Request::route()->getName() == 'admin.discussion.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('farmer.discussion.index') }}"><i class="fas fa-comments"></i> <span>Diskusi</span></a></li>
+            <li class="{{ Request::route()->getName() == 'farmer.discussion.index' ? ' active' : '' }}"><a class="nav-link" href="{{ route('farmer.discussion.index') }}"><i class="fas fa-comments"></i> <span>Diskusi</span></a></li>
         @endif
     </ul>
 </aside>

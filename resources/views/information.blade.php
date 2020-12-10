@@ -61,7 +61,13 @@
                 </div>
                 @empty
                     <div class="col-12 text-center">
-                        <p>Admin belum memberikan informasi apapun</p>
+                        @guest
+                            <p>Admin belum memberikan informasi apapun</p>
+                        @elseif(Auth::user()->role == 'farmer')
+                            <p>Admin belum memberikan informasi apapun</p>
+                        @elseif(Auth::user()->role == 'admin')
+                            <p>Anda belum memberikan informasi apapun</p>
+                        @endif
                     </div>
                 @endforelse
             </div>

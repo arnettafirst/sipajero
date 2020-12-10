@@ -46,7 +46,7 @@ class ReportController extends Controller
 
         Report::create([
             'title'     => $request->title,
-            'slug'      => strtolower($request->title),
+            'slug'      => strtolower($request->title) . time(),
             'contents'  => $request->contents,
             'user_id'   => Auth::id()
         ]);

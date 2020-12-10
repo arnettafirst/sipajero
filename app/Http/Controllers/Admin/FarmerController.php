@@ -144,6 +144,6 @@ class FarmerController extends Controller
         Storage::disk('local')->delete('public/photo/' . $farmer->photo);
         $farmer->delete();
 
-        return redirect()->back()->with(['success' => 'Data Berhasil Dihapus']);
+        return redirect()->back()->with(['success' => 'Data berhasil dihapus']);
     }
 }

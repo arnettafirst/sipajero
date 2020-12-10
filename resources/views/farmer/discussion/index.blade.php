@@ -35,7 +35,7 @@
                                             </td>
                                             <td>{{ $discussion->created_at }}</td>
                                             <td>{{ $discussion->title }}</td>
-                                            <td>{{ $discussion->author }}</td>
+                                            <td>{{ Auth::user()->firstname }}</td>
                                             <td>
                                                 <div class="row">
                                                     <a href="{{ route('farmer.discussion.show', $discussion->slug) }}" class="btn btn-primary ml-3">Show</a>

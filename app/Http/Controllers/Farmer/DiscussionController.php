@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Farmer;
 
+use App\Comment;
 use App\Discussion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class DiscussionController extends Controller
 {
@@ -18,7 +20,7 @@ class DiscussionController extends Controller
     {
         $discussions = Auth::user()->discussions()->paginate(10);
 
-        return view('admin.discussion.index', compact('discussions'));
+        return view('farmer.discussion.index', compact('discussions'));
     }
 
     /**
@@ -28,7 +30,7 @@ class DiscussionController extends Controller
      */
     public function create()
     {
-        //
+        return view('farmer.discussion.create');
     }
 
     /**
@@ -39,7 +41,20 @@ class DiscussionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'     => 'required|string',
+            'contents'  => 'required'
+        ]);
+
+        Discussion::create([
+            'title'     => $request->title,
+            'slug'      => strtolower($request->title) . time(),
+            'contents'  => $request->contents,
+            'excerpt'   => Str::words(strip_tags(html_entity_decode($request->contents)), 8),
+            'user_id'   => Auth::id()
+        ]);
+
+        return redirect()->route('discussion')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -48,9 +63,12 @@ class DiscussionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $discussion = Discussion::where('slug', $slug)->firstOrFail();
+        $comments = Comment::where('discussion_id', $discussion->id)->get();
+
+        return view('discussion-detail', compact('discussion', 'comments'));
     }
 
     /**
@@ -59,9 +77,11 @@ class DiscussionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $discussion = Discussion::where('slug', $slug)->whereId(Auth::id())->firstOrFail();
+
+        return view('admin.discussion.edit', compact('discussion'));
     }
 
     /**
@@ -73,7 +93,22 @@ class DiscussionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title'     => 'required|string',
+            'contents'  => 'required'
+        ]);
+
+        $discussion = Discussion::findOrFail($id);
+
+        $discussion->update([
+            'title'     => $request->title,
+            'slug'      => strtolower($request->title) . time(),
+            'contents'  => $request->contents,
+            'excerpt'   => Str::words(strip_tags(html_entity_decode($request->contents)), 8),
+            'user_id'   => Auth::id()
+        ]);
+
+        return redirect()->route('discussion.detail', $discussion->slug)->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -85,5 +120,22 @@ class DiscussionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addComment(Request $request, $slug)
+    {
+        $this->validate($request, [
+            'contents'  => 'required'
+        ]);
+
+        $discussion = Discussion::where('slug', $slug)->firstOrFail();
+
+        Comment::create([
+            'contents'      => $request->contents,
+            'user_id'       => Auth::id(),
+            'discussion_id' => $discussion->id
+        ]);
+
+        return redirect()->back();
     }
 }

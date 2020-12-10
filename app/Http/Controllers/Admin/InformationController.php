@@ -55,7 +55,7 @@ class InformationController extends Controller
         Information::create([
             'thumbnail' => $filename,
             'title'     => $request->title,
-            'slug'      => strtolower($request->title),
+            'slug'      => strtolower($request->title) . time(),
             'contents'  => $request->contents,
             'excerpt'   => Str::words(strip_tags(html_entity_decode($request->contents)), 8)
         ]);
@@ -100,7 +100,7 @@ class InformationController extends Controller
     {
         $this->validate($request, [
             'thumbnail' => 'required|image|mimes:png,jpeg,jpg',
-            'title'     => 'required|string',
+            'title'     => 'required|string|unique:informations',
             'contents'  => 'required'
         ]);
 
@@ -115,12 +115,12 @@ class InformationController extends Controller
         $information->update([
             'thumbnail' => $filename,
             'title'     => $request->title,
-            'slug'      => strtolower($request->title),
+            'slug'      => strtolower($request->title) . time(),
             'contents'  => $request->contents,
             'excerpt'   => Str::words(strip_tags(html_entity_decode($request->contents)), 8)
         ]);
 
-        return redirect()->route('information.detail', $information->slug)->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('information.detail', $information->slug)->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -135,6 +135,6 @@ class InformationController extends Controller
         Storage::disk('local')->delete('public/thumbnail/' . $information->thumbnail);
         $information->delete();
 
-        return redirect()->back()->with(['success' => 'Data Berhasil Dihapus']);
+        return redirect()->back()->with(['success' => 'Data berhasil dihapus']);
     }
 }

@@ -6,7 +6,7 @@
             <div class="row mt-5">
                 <div class="col-12 col-md-6">
                     <h1 class="mt-5">SIPAJERO</h1>
-                    <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias amet debitis dicta doloremque, earum est itaque magni minima nemo odit quasi quidem reiciendis sequi, sint, tempora vitae voluptates voluptatum.</p>
+                    <p class="mt-5">Selamat datang di SIPAJERO (Sistem Peramalan Hasil Produksi Jeruk Keprok). Sistem berbasis website ini berfungsi untuk membantu petani jeruk keprok untuk meramalkan hasil produksi jeruk keprok di kebunnya. Terdapat beberapa fitur dalam sistem ini, seperti Peramalan, Informasi, Diskusi, dan Laporan.</p>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="card">
@@ -26,9 +26,10 @@
                 </div>
                 <div class="col-12 col-md-6 mt-5">
                     <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem eaque et eveniet, inventore laudantium nemo sed ut veritatis. Accusamus amet deleniti dolorum eum eveniet magnam perferendis quaerat reiciendis repellendus.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem eaque et eveniet, inventore laudantium nemo sed ut veritatis. Accusamus amet deleniti dolorum eum eveniet magnam perferendis quaerat reiciendis repellendus.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem eaque et eveniet, inventore laudantium nemo sed ut veritatis. Accusamus amet deleniti dolorum eum eveniet magnam perferendis quaerat reiciendis repellendus.</li>
+                        <li>Fitur Peramalan : Merupakan fitur utama dalam sistem ini yang berfungsi untuk membantu petani kebun jeruk keprok untuk meramalkan hasil produksi jeruknya.</li>
+                        <li>Fitur Informasi : Merupakan fitur yang berisi artikel informatif seputar perkebunan atau pertanian dan dapat diakses oleh siapa saja</li>
+                        <li>Fitur Diskusi : Merupakan fitur di mana akan terjadi forum didalamnya, dan pengguna akan dapat saling berinteraksi untuk membahas topik seputar pertanian atau perkebunan</li>
+                        <li>Fitur Laporan : Merupakan fitur aduan, di mana petani dapat mengajukan aduan kepada admin apabila terdapat kendala dalam mengoperasikan website ini</li>
                     </ul>
                 </div>
             </div>
@@ -84,18 +85,22 @@
                         <div class="card-body">
                             <div class="list-group list-group-flush mt-1">
                                 @forelse($discussions as $discussion)
-                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <a href="{{ route('discussion.detail', $discussion->slug) }}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small>3 days ago</small>
+                                        <h5 class="mb-1">{{ $discussion->title }}</h5>
+                                        <small class="text-primary">{{ $discussion->created_at }}</small>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    <small>Author</small>
+                                    <p class="mb-1">{{ $discussion->excerpt }}</p>
+                                    <small class="font-weight-600">{{ $discussion->user()->first()->firstname }}</small>
                                 </a>
                                 @empty
                                     <div class="text-center">
-                                        <p>Tidak terdapat diskusi apapun saat ini</p>
-                                        <a class="btn btn-primary w-25" href="#">Mulai Diskusi Sekarang</a>
+                                        @guest
+                                            <p>Tidak terdapat diskusi apapun saat ini</p>
+                                            <a class="btn btn-primary w-25" href="#" data-toggle="modal" data-target="#loginModal">Mulai Diskusi Sekarang</a>
+                                        @elseguest
+                                            <p>Tidak terdapat diskusi apapun saat ini</p>
+                                        @endif
                                     </div>
                                 @endforelse
                             </div>
