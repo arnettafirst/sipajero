@@ -79,7 +79,7 @@ class DiscussionController extends Controller
      */
     public function edit($slug)
     {
-        $discussion = Discussion::where('slug', $slug)->whereId(Auth::id())->firstOrFail();
+        $discussion = Discussion::where('slug', $slug)->where('user_id', Auth::id())->firstOrFail();
 
         return view('admin.discussion.edit', compact('discussion'));
     }
