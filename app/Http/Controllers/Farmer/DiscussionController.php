@@ -81,7 +81,7 @@ class DiscussionController extends Controller
     {
         $discussion = Discussion::where('slug', $slug)->where('user_id', Auth::id())->firstOrFail();
 
-        return view('admin.discussion.edit', compact('discussion'));
+        return view('farmer.discussion.edit', compact('discussion'));
     }
 
     /**
