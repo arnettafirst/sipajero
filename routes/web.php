@@ -43,7 +43,7 @@ Route::group(['as' => 'admin.', 'middleware' => ['auth', 'check.role:admin'], 'n
 
 Route::group(['as' => 'farmer.', 'middleware' => ['auth', 'check.role:farmer'], 'namespace' => 'Farmer', 'prefix' => 'farmer'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
-    Route::resource('farmer', 'FarmerController')->except('create', 'store', 'edit', 'update', 'destroy');
+    Route::resource('farmer', 'FarmerController')->except('create', 'store', 'show', 'edit', 'update', 'destroy');
     Route::resource('report', 'ReportController')->except('create', 'edit', 'update', 'destroy');
     Route::resource('discussion', 'DiscussionController')->except('destroy');
     Route::post('/discussion/{discussion}', 'DiscussionController@addComment')->name('comment.store');
