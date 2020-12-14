@@ -39,7 +39,7 @@
                                             </td>
                                             <td>{{ $report->created_at }}</td>
                                             <td>{{ $report->title }}</td>
-                                            <td>{{ $report->user()->first()->firstname }}</td>
+                                            <td>{{ $report->user->firstname }}</td>
                                             <td>
                                                 <div class="row">
                                                     <a href="{{ route('admin.report.show', $report->slug) }}" class="btn btn-primary ml-3">Show</a>

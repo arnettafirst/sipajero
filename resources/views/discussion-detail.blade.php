@@ -31,7 +31,7 @@
                                                 </h4>
                                             </div>
                                             <div class="ticket-info">
-                                                <div class="font-weight-600">{{ $discussion->user()->first()->firstname }}</div>
+                                                <div class="font-weight-600">{{ $discussion->user->firstname }}</div>
                                                 <div class="bullet"></div>
                                                 <div class="text-primary font-weight-600">{{ $discussion->created_at }}</div>
                                             </div>
@@ -42,7 +42,7 @@
                                         <div class="ticket-divider"></div>
                                         @foreach($comments as $comment)
                                             <div class="d-flex flex-row">
-                                                <small class="font-weight-600">{{ $comment->user()->first()->firstname }}</small>
+                                                <small class="font-weight-600">{{ $comment->user->firstname }}</small>
                                                 <small class="bullet"></small>
                                                 <small class="text-primary font-weight-600">{{ $comment->created_at }}</small>
                                             </div>

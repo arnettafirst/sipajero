@@ -125,7 +125,7 @@ class FarmerController extends Controller
             'lastname'      => $request->lastname,
             'username'      => $request->username,
             'email'         => $request->email,
-            'password'      => bcrypt($request->password),
+            'password'      => $request->password,
             'old_password'  => $request->password
         ]);
 

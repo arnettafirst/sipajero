@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Discussion;
 use App\Http\Controllers\Controller;
+use App\Information;
+use App\Report;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -23,6 +27,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        $farmers = User::where('role', 'farmer')->count();
+        $informations = Information::count();
+        $reports = Report::count();
+        $discussions = Discussion::count();
+
+        return view('admin.dashboard.index', compact('farmers', 'informations', 'reports', 'discussions'));
     }
 }

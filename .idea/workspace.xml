@@ -125,21 +125,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/farmer/discussion" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/img" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\sipajero\public\storage\photo" />
+      <recent name="D:\Projects\sipajero\public\storage" />
+      <recent name="D:\Projects\sipajero\resources\views\layouts" />
+      <recent name="D:\Projects\sipajero\resources\views\auth" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\sipajero\public\assets\img" />
       <recent name="D:\Projects\sipajero\resources\views\farmer\discussion" />
       <recent name="D:\Projects\sipajero\resources\views\farmer" />
       <recent name="D:\Projects\sipajero\resources\views\farmer\report" />
       <recent name="D:\Projects\sipajero\resources\js" />
-      <recent name="D:\Projects\sipajero\resources\views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\sipajero\resources\views\layouts" />
-      <recent name="D:\Projects\sipajero\resources\views\auth" />
     </key>
   </component>
   <component name="RunManager">
@@ -175,7 +177,10 @@
       <workItem from="1606830669581" duration="585000" />
       <workItem from="1606844658434" duration="19166000" />
       <workItem from="1607398653276" duration="32928000" />
-      <workItem from="1607574921653" duration="8975000" />
+      <workItem from="1607574921653" duration="10071000" />
+      <workItem from="1607613041893" duration="3331000" />
+      <workItem from="1607933356680" duration="5458000" />
+      <workItem from="1607948225220" duration="5950000" />
     </task>
     <servers />
   </component>

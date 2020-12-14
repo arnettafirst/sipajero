@@ -35,7 +35,7 @@
                                             </td>
                                             <td>{{ $discussion->created_at }}</td>
                                             <td>{{ $discussion->title }}</td>
-                                            <td>{{ $discussion->user()->first()->firstname }}</td>
+                                            <td>{{ $discussion->user->firstname }}</td>
                                             <td>
                                                 <div class="row">
                                                     <a href="{{ route('admin.discussion.show', $discussion->slug) }}" class="btn btn-primary ml-3">Show</a>

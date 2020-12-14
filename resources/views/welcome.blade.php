@@ -91,7 +91,7 @@
                                         <small class="text-primary">{{ $discussion->created_at }}</small>
                                     </div>
                                     <p class="mb-1">{{ $discussion->excerpt }}</p>
-                                    <small class="font-weight-600">{{ $discussion->user()->first()->firstname }}</small>
+                                    <small class="font-weight-600">{{ $discussion->user->firstname }}</small>
                                 </a>
                                 @empty
                                     <div class="text-center">

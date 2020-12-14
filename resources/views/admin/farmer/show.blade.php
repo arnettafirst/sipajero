@@ -15,7 +15,7 @@
                         </div>
                         <div class="card-body">
                             <div class="profile-widget-header text-center">
-                                <img alt="image" src="{{ $farmer->photo }}" class="rounded-circle">
+                                <img class="w-25 rounded-circle" alt="image" src="{{ url('/storage/photo/' . $farmer->photo) }}" class="rounded-circle">
                                 <div class="profile-widget-name text-center text-primary font-weight-600 mt-3">{{ $farmer->username }}
                                     <div class="text-muted d-inline font-weight-normal">
                                         <div class="slash"></div>

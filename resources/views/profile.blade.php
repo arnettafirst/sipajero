@@ -11,11 +11,11 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="card profile-widget" style="margin: 0">
                         <div class="card-header">
-                            <h4>Profil Petani</h4>
+                            <h4>Profil Pengguna</h4>
                         </div>
                         <div class="card-body">
                             <div class="profile-widget-header text-center">
-                                <img alt="image" src="{{ Auth::user()->photo }}" class="rounded-circle">
+                                <img class="w-25 rounded-circle" alt="image" src="{{ url('/storage/photo/' . Auth::user()->photo) }}" class="rounded-circle">
                                 <div class="profile-widget-name text-center text-primary font-weight-600 mt-3">{{ Auth::user()->username }}
                                     <div class="text-muted d-inline font-weight-normal">
                                         <div class="slash"></div>
@@ -36,7 +36,7 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Ubah Data Petani</h4>
+                            <h4>Ubah Data Pengguna</h4>
                         </div>
                         @if ($errors->any())
                             <div class="alert alert-danger alert-dismissible show fade">

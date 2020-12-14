@@ -22,7 +22,7 @@
         @endguest
         @auth
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="{{ Auth::user()->photo }}" class="rounded-circle mr-1">
+                <img alt="image" src="{{ url('/storage/photo/' . Auth::user()->photo) }}" class="rounded-circle mr-1">
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->username }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
