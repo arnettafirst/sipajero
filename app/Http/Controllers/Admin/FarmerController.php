@@ -41,9 +41,9 @@ class FarmerController extends Controller
     {
         $this->validate($request, [
             'photo'     => 'required|image|mimes:png,jpeg,jpg',
-            'firstname' => 'required|string',
-            'lastname'  => 'nullable|string',
-            'username'  => 'required|string',
+            'firstname' => 'required|string|alpha|max:46',
+            'lastname'  => 'nullable|string|alpha|max:46',
+            'username'  => 'required|string|max:64|unique:users',
             'email'     => 'required|string|email|max:255|unique:users',
             'password'  => 'required|string|min:8'
         ]);
@@ -102,11 +102,11 @@ class FarmerController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'photo'     => 'nullable|image|mimes:png,jpeg,jpg',
-            'firstname' => 'required|string',
-            'lastname'  => 'nullable|string',
-            'username'  => 'required|string',
-            'email'     => 'required|string|email|max:255|unique:users',
+            'photo'     => 'required|image|mimes:png,jpeg,jpg',
+            'firstname' => 'required|string|alpha|max:46',
+            'lastname'  => 'nullable|string|alpha|max:46',
+            'username'  => 'required|string|max:64|unique:users,id',
+            'email'     => 'required|string|email|max:255|unique:users,id',
             'password'  => 'required|string|min:8'
         ]);
 

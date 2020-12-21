@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Nama Belakang</label>
+                        <label>Nama Belakang (opsional)</label>
                         <div class="input-group">
                             <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" placeholder="Doe">
                             <div class="invalid-feedback">

@@ -10,11 +10,6 @@ class Comment extends Model
 {
     protected $guarded = [];
 
-    public function setSlugAttribute($value)
-    {
-        $this->attributes['slug'] = Str::slug($value);
-    }
-
     public function getCreatedAtAttribute()
     {
         return Carbon::parse($this->attributes['created_at'])->translatedFormat('d F Y');

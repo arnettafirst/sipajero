@@ -114,6 +114,7 @@
       <path value="$PROJECT_DIR$/vendor/league/flysystem-azure-blob-storage" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/laraveldaily/laravel-charts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jdKrRgp7g8vNpe2QChzscv6fjy" />
@@ -125,23 +126,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/harvest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\sipajero\resources\views\admin\harvest" />
+      <recent name="D:\Projects\sipajero\public\assets\img" />
+      <recent name="D:\Projects\sipajero\resources\views\farmer\discussion" />
+      <recent name="D:\Projects\sipajero\resources\views\farmer" />
+      <recent name="D:\Projects\sipajero\resources\views\farmer\report" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\sipajero\public\storage\photo" />
       <recent name="D:\Projects\sipajero\public\storage" />
       <recent name="D:\Projects\sipajero\resources\views\layouts" />
       <recent name="D:\Projects\sipajero\resources\views\auth" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\sipajero\public\assets\img" />
-      <recent name="D:\Projects\sipajero\resources\views\farmer\discussion" />
-      <recent name="D:\Projects\sipajero\resources\views\farmer" />
-      <recent name="D:\Projects\sipajero\resources\views\farmer\report" />
-      <recent name="D:\Projects\sipajero\resources\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -181,6 +182,8 @@
       <workItem from="1607613041893" duration="3331000" />
       <workItem from="1607933356680" duration="5458000" />
       <workItem from="1607948225220" duration="7000000" />
+      <workItem from="1608460253766" duration="22153000" />
+      <workItem from="1608542157069" duration="1749000" />
     </task>
     <servers />
   </component>
@@ -196,10 +199,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="510" y="37" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1604341614393" />
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607585622442">
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608488064312">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1607585622442" />
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1608488064312" />
     <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1604905770307">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

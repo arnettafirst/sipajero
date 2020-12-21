@@ -18,8 +18,8 @@ class UsersTableSeeder extends Seeder
             'lastname'          => 'Sipajero',
             'username'          => 'admins',
             'email'             => 'admin@sipajero.com',
-            'password'          => 'a',
-            'old_password'      => 'a',
+            'password'          => 'abcdefgh',
+            'old_password'      => 'abcdefgh',
             'remember_token'    => null,
         ]);
 
@@ -29,8 +29,8 @@ class UsersTableSeeder extends Seeder
             'lastname'          => 'Sipajero',
             'username'          => 'farmers',
             'email'             => 'farmer@sipajero.com',
-            'password'          => 'a',
-            'old_password'      => 'a',
+            'password'          => 'abcdefgh',
+            'old_password'      => 'abcdefgh',
             'remember_token'    => null,
         ]);
     }

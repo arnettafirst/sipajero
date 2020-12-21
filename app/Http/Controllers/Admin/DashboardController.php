@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Information;
 use App\Report;
 use App\User;
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 class DashboardController extends Controller
 {
@@ -32,6 +33,23 @@ class DashboardController extends Controller
         $reports = Report::count();
         $discussions = Discussion::count();
 
-        return view('admin.dashboard.index', compact('farmers', 'informations', 'reports', 'discussions'));
+        $production_chart_settings = [
+            'chart_title'           => 'Grafik Hasil Panen Jeruk / Bulan',
+            'chart_type'            => 'line',
+            'report_type'           => 'group_by_date',
+            'model'                 => 'App\Harvest',
+            'group_by_field'        => 'month',
+            'group_by_period'       => 'month',
+            'aggregate_function'    => 'sum',
+            'aggregate_field'       => 'production',
+            'filter_field'          => 'created_at',
+            'group_by_field_format' => 'Y-m-d',
+            'column_class'          => 'col-12',
+            'entries_number'        => '5',
+        ];
+
+        $production_chart = new LaravelChart($production_chart_settings);
+
+        return view('admin.dashboard.index', compact('farmers', 'informations', 'reports', 'discussions', 'production_chart'));
     }
 }

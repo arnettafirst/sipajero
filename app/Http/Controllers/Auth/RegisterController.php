@@ -50,9 +50,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'firstname' => ['required', 'string'],
-            'lastname'  => ['nullable', 'string'],
-            'username'  => ['required', 'string'],
+            'firstname' => ['required', 'string', 'alpha', 'max:46'],
+            'lastname'  => ['nullable', 'string', 'alpha', 'max:46'],
+            'username'  => ['required', 'string', 'max:64', 'unique:users'],
             'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password'  => ['required', 'string', 'min:8', 'confirmed'],
         ]);

@@ -12,6 +12,11 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>Tabel Diskusi</h4>
+                            <div class="card-header-action">
+                                <a href="{{ route('farmer.discussion.create') }}" class="btn btn-primary">
+                                    Tambah Data
+                                </a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
