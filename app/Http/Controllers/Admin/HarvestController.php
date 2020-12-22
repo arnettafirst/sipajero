@@ -15,7 +15,7 @@ class HarvestController extends Controller
      */
     public function index()
     {
-        $harvests = Harvest::orderBy('created_at', 'ASC')->paginate(10);
+        $harvests = Harvest::orderBy('month', 'ASC')->paginate(10);
 
         return view('admin.harvest.index', compact('harvests'));
     }
@@ -43,7 +43,12 @@ class HarvestController extends Controller
             'production'=> 'required|integer'
         ]);
 
-        $forecast = null;
+        if (Harvest::count() >= 3) {
+            $data = Harvest::latest()->take(3)->get();
+            $forecast = ($data[2]->production * 1 + $data[1]->production * 2 + $data[0]->production * 3) / 6;
+        } else {
+            $forecast = null;
+        }
 
         Harvest::create([
             'month'     => $request->month,
@@ -112,9 +117,6 @@ class HarvestController extends Controller
      */
     public function destroy($id)
     {
-        $harvest = Harvest::findOrFail($id);
-        $harvest->delete();
 
-        return redirect()->back()->with(['success' => 'Data berhasil dihapus']);
     }
 }

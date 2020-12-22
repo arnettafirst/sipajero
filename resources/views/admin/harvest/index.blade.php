@@ -61,19 +61,12 @@
                                             <td class="text-center">
                                                 {{ $i+1 }}
                                             </td>
-                                            <td>{{ $harvest->month }}</td>
+                                            <td>{{ $harvest->month->format('M') }}</td>
                                             <td>{{ $harvest->production }}</td>
                                             <td>{{ $harvest->forecast }}</td>
                                             <td>
                                                 <div class="row">
                                                     <a href="{{ route('admin.harvest.edit', $harvest->id) }}" class="btn btn-primary ml-3">Edit</a>
-                                                    <a class="ml-2">
-                                                        <form action="{{ route('admin.harvest.destroy', $harvest->id) }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger" type="submit">Delete</button>
-                                                        </form>
-                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>

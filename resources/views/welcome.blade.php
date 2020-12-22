@@ -11,7 +11,7 @@
                 <div class="col-12 col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <img class="d-block w-100" src="https://picsum.photos/300/200" alt="Header">
+                            <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2020/11/16/04/00/oranges-5747890_1280.jpg" alt="Header">
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                 <div class="col-12 col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <img class="d-block w-100" src="https://picsum.photos/300/200" alt="Header">
+                            <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2015/06/29/08/52/mandarin-825337_1280.jpg" alt="Header">
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                 <div class="col-12 col-md-4">
                     <article class="article article-style-c">
                         <div class="article-header">
-                            <div class="article-image" data-background="https://picsum.photos/300/200">
+                            <div class="article-image" data-background="https://scontent.fsub9-1.fna.fbcdn.net/v/t1.0-9/102420759_2719461398287947_2245510973193993953_o.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeF2iSIJn3QIu_tQDOv-3MJzg8gyrO9Jyp-DyDKs70nKnxNry1WyT-8KtYZmJpNQsJ8I724E-M-eljxLlRZMe5kn&_nc_ohc=sDXYShzAK-UAX9JL1Mz&_nc_ht=scontent.fsub9-1.fna&oh=4d671d8ae417607e9220676c7c2f3ce6&oe=60080964">
                             </div>
                         </div>
                         <div class="article-details">
@@ -132,7 +132,7 @@
                 <div class="col-12 col-md-4">
                     <article class="article article-style-c">
                         <div class="article-header">
-                            <div class="article-image" data-background="https://picsum.photos/300/200">
+                            <div class="article-image" data-background="https://scontent.fsub9-1.fna.fbcdn.net/v/t1.0-9/123164889_2771166286536317_7802601012965438635_o.jpg?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeGgPncPGug8sUY7HHMdfXzdxsk-zm_kFGzGyT7Ob-QUbLAaLI1ujcTDDuaDcuxfJVFcTw1iowEAGvpC5NcChUZW&_nc_ohc=1OfvkjW8foUAX9H8u04&_nc_ht=scontent.fsub9-1.fna&oh=07786233436a1c980eca649ad831a02f&oe=60073007">
                             </div>
                         </div>
                         <div class="article-details">
@@ -148,7 +148,7 @@
                 <div class="col-12 col-md-4">
                     <article class="article article-style-c">
                         <div class="article-header">
-                            <div class="article-image" data-background="https://picsum.photos/300/200">
+                            <div class="article-image" data-background="https://scontent.fsub9-1.fna.fbcdn.net/v/t1.0-9/71567021_1254525764729010_2055798899527909376_o.jpg?_nc_cat=107&ccb=2&_nc_sid=e3f864&_nc_eui2=AeHSimzBlPjy1M9vyzJqWCcgXKWPjGVjralcpY-MZWOtqaA4u-QT_kLQxPsnD67C9Voa7m6Cd2e7tsDk-PJsVkWT&_nc_ohc=hARPL6Ax74MAX_3Km0R&_nc_ht=scontent.fsub9-1.fna&oh=8c73dce23c67100007c5042c34f3058c&oe=60076E2B">
                             </div>
                         </div>
                         <div class="article-details">
@@ -162,7 +162,7 @@
                 <div class="col-12 col-md-4">
                     <article class="article article-style-c">
                         <div class="article-header">
-                            <div class="article-image" data-background="https://picsum.photos/300/200">
+                            <div class="article-image" data-background="https://scontent.fsub9-1.fna.fbcdn.net/v/t1.0-0/c0.39.304.304a/p180x540/123549764_2248638188615001_1648246149325907393_o.jpg?_nc_cat=102&ccb=2&_nc_sid=da31f3&_nc_eui2=AeH5g8yVMIXHBg2QggeU1-VMrRGKXy_rrQutEYpfL-utCwYBmp0BRWXsnZtEo_4dUvBNXRqxf9wWlhv_GpttGFQc&_nc_ohc=gvo5AYyG4z0AX_Rivwt&_nc_ht=scontent.fsub9-1.fna&tp=27&oh=c75a517693b1c7388d5d55f717bc19fd&oe=60061B57">
                             </div>
                         </div>
                         <div class="article-details">
@@ -176,7 +176,7 @@
                 <div class="col-12 col-md-4">
                     <article class="article article-style-c">
                         <div class="article-header">
-                            <div class="article-image" data-background="https://picsum.photos/300/200">
+                            <div class="article-image" data-background="https://scontent.fsub9-1.fna.fbcdn.net/v/t31.0-8/16402464_374223292951243_255069526956767139_o.jpg?_nc_cat=107&ccb=2&_nc_sid=19026a&_nc_eui2=AeG0TxUe977k59DnrKp65JOEPSEFRiXYHVo9IQVGJdgdWnMemWXzHEykwnZNuTgtH4MkL0DsiFqhWMpt8OaLaTSo&_nc_ohc=mddEvHSmen8AX87Ft10&_nc_ht=scontent.fsub9-1.fna&oh=45097c95d06780a581a55f75cf2f4da6&oe=6005AEA3">
                             </div>
                         </div>
                         <div class="article-details">

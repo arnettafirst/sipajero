@@ -9,6 +9,8 @@ class Harvest extends Model
 {
     protected $guarded = [];
 
+    protected $dates = ['month'];
+
     public function getCreatedAtAttribute()
     {
         return Carbon::parse($this->attributes['created_at'])->translatedFormat('d F Y');

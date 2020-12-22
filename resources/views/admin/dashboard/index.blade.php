@@ -76,6 +76,16 @@
                     </div>
                 </div>
             </div>
+            <div class="{{ $forecast_chart->options['column_class'] }}">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>{!! $forecast_chart->options['chart_title'] !!}</h4>
+                    </div>
+                    <div class="card-body">
+                        {!! $forecast_chart->renderHtml() !!}
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
@@ -83,4 +93,5 @@
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" integrity="sha512-HCG6Vbdg4S+6MkKlMJAm5EHJDeTZskUdUMTb8zNcUKoYNDteUQ0Zig30fvD9IXnRv7Y0X4/grKCnNoQ21nF2Qw==" crossorigin="anonymous"></script>
     {!! $production_chart->renderJs() !!}
+    {!! $forecast_chart->renderJs() !!}
 @endsection
