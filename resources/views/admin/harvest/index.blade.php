@@ -52,7 +52,6 @@
                                         <th>Bulan</th>
                                         <th>Jumlah Panen</th>
                                         <th>Peramalan</th>
-                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -64,11 +63,6 @@
                                             <td>{{ $harvest->month->format('M') }}</td>
                                             <td>{{ $harvest->production }}</td>
                                             <td>{{ $harvest->forecast }}</td>
-                                            <td>
-                                                <div class="row">
-                                                    <a href="{{ route('admin.harvest.edit', $harvest->id) }}" class="btn btn-primary ml-3">Edit</a>
-                                                </div>
-                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

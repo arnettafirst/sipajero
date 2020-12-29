@@ -100,7 +100,7 @@ class InformationController extends Controller
     {
         $this->validate($request, [
             'thumbnail' => 'required|image|mimes:png,jpeg,jpg',
-            'title'     => 'required|string|unique:informations',
+            'title'     => 'required|string',
             'contents'  => 'required'
         ]);
 

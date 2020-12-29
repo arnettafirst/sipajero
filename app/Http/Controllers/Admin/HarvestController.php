@@ -78,9 +78,7 @@ class HarvestController extends Controller
      */
     public function edit($id)
     {
-        $harvest = Harvest::findOrFail($id);
 
-        return view('admin.harvest.edit', compact('harvest'));
     }
 
     /**
@@ -92,21 +90,7 @@ class HarvestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'month'     => 'required|date',
-            'production'=> 'required|integer'
-        ]);
 
-        $harvest = Harvest::findOrFail($id);
-        $forecast = null;
-
-        $harvest->update([
-            'month'     => $request->month,
-            'production'=> $request->production,
-            'forecast'  => $forecast,
-        ]);
-
-        return redirect()->route('admin.harvest.index')->with('success', 'Data berhasil diubah');
     }
 
     /**
